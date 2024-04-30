@@ -67,6 +67,8 @@ canvas.addEventListener('mousemove', function (event) {
     var mouseX = event.offsetX;
     var mouseY = event.offsetY;
 
+    var foundHoveredRect = null; // Variable pour savoir si un rectangle est survolé
+
     // Parcourir tous les rectangles pour détecter le survol
     for (var i = 0; i < rectsPerRow; i++) {
         for (var j = 0; j < canvas.height / (rectSize + gap); j++) {
@@ -77,15 +79,15 @@ canvas.addEventListener('mousemove', function (event) {
             if (mouseX > rectX && mouseX < rectX + rectSize && mouseY > rectY && mouseY < rectY + rectSize) {
                 // Rectangle survolé
                 hoveredRect = { x: rectX, y: rectY };
-                return;
-            } else if (!(mouseX > rectX && mouseX < rectX + rectSize && mouseY > rectY && mouseY < rectY + rectSize) && previousHoveredRect != hoveredRect) {
-                previousHoveredRect = hoveredRect;
-                return;
+                foundHoveredRect = hoveredRect; // Enregistrer le rectangle survolé
             }
         }
     }
 
-
+    if (!foundHoveredRect) {
+        // Si aucun rectangle n'est survolé, mettre à jour previousHoveredRect
+        previousHoveredRect = hoveredRect;
+    }
 });
 
 // Fonction pour dessiner le rectangle survolé
