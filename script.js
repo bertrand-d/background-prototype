@@ -15,12 +15,23 @@ var gap = 5;
 var rectsPerRow = Math.floor(canvas.width);
 var rectColors = '#0B0B0B'; // Couleurs des rectangles
 var hoveredRect = null; // Rectangle survolé
+var hoveredRectColor = "#9000bb"; //couleur du rectangle survolé
 
 //Variable pour suivre le temps écoulé depuis le début du survol
 var hoverTime = 0;
 
 //Constante pour spécifier la durée de la transition
 const transitionDuration = 1000;
+
+// Fonction pour convertir une couleur hexa en rgb
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
 
 // Fonction pour dessiner la bande en arrière-plan
 function drawBackground() {
@@ -34,7 +45,7 @@ function drawBackground() {
         0, bandPosY + (window.innerHeight)
     );
     gradient.addColorStop(0, 'black'); // Couleur de départ
-    gradient.addColorStop(0.5, '#9000bb'); // Couleur intermédiaire
+    gradient.addColorStop(0.5, hoveredRectColor); // Couleur intermédiaire
     gradient.addColorStop(1, 'black'); // Couleur de fin
 
     // Dessiner la bande avec le dégradé de couleur
@@ -73,7 +84,7 @@ canvas.addEventListener('mousemove', function (event) {
     var mouseY = event.offsetY;
 
     // Variable pour savoir si un rectangle est déjà survolé et empêcher l'animation de se reproduire au moindre mouvement de la souris
-    var foundHoveredRect = null; 
+    var foundHoveredRect = null;
 
     // Parcourir tous les rectangles pour détecter le survol
     for (var i = 0; i < rectsPerRow; i++) {
@@ -99,11 +110,10 @@ canvas.addEventListener('mousemove', function (event) {
 // Fonction pour dessiner le rectangle survolé
 function drawHoveredRect() {
     if (hoveredRect) {
-        var hoverColor = "#9000bb";
         var hoveredRectX = hoveredRect.x;
         var hoveredRectY = hoveredRect.y;
 
-        ctx.fillStyle = hoverColor;
+        ctx.fillStyle = hoveredRectColor;
         ctx.fillRect(hoveredRectX, hoveredRectY, rectSize, rectSize);
     }
 }
@@ -119,8 +129,8 @@ function drawPreviousHoveredRect() {
         // Calculer le pourcentage du temps écoulé par rapport à la durée de la transition
         var progress = Math.min(hoverTime / transitionDuration, 1);
 
-        const colorStart = [144, 0, 187]; // violet
-        const colorEnd = [11,11,11]; // Bleu
+        const colorStart = [hexToRgb(hoveredRectColor).r, hexToRgb(hoveredRectColor).g, hexToRgb(hoveredRectColor).b];
+        const colorEnd = [11, 11, 11]; // Noir
 
         // Calculer la couleur de transition pour cette étape
         var r = Math.round(colorStart[0] + (colorEnd[0] - colorStart[0]) * progress);
