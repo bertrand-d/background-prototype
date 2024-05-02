@@ -6,7 +6,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // Variables pour la bande en arrière-plan
-var bandPosY = - window.innerHeight / 2;
+var bandPosY = - window.innerHeight;
 var bandSpeed = 2;
 
 // Variables pour la grille de rectangles
@@ -31,7 +31,7 @@ function drawBackground() {
     //Créer le dégradé linéaire
     var gradient = ctx.createLinearGradient(
         0, bandPosY,
-        0, bandPosY + (window.innerHeight / 2)
+        0, bandPosY + (window.innerHeight)
     );
     gradient.addColorStop(0, 'black'); // Couleur de départ
     gradient.addColorStop(0.5, '#9000bb'); // Couleur intermédiaire
@@ -39,7 +39,7 @@ function drawBackground() {
 
     // Dessiner la bande avec le dégradé de couleur
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, bandPosY, canvas.width, window.innerHeight / 2);
+    ctx.fillRect(0, bandPosY, canvas.width, window.innerHeight);
 }
 
 // Fonction pour dessiner la grille de rectangles
@@ -60,7 +60,7 @@ function drawRects() {
 function animateBackground() {
     bandPosY += bandSpeed;
     if (bandPosY > canvas.height) {
-        bandPosY = - window.innerHeight / 2; // Réinitialiser la position de la bande en haut du canvas
+        bandPosY = - window.innerHeight; // Réinitialiser la position de la bande en haut du canvas
     }
 }
 
