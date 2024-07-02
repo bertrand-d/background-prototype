@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -14,7 +18,7 @@ img {
 }
 
 * {
-  font-family: "Sora", sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -28,7 +32,7 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
   width: 50%;
   height: 50%;
-  padding: 50px 100px;
+  padding: 50px;
   background: black;
   z-index: 1;
   top: 50%;
@@ -37,10 +41,31 @@ h1, h2, h3, h4, h5, h6, p {
   border: solid 1px rgb(56, 56, 56);
 }
 .presentation-container .logo-container {
-  width: 200px;
+  width: 150px;
+  margin-left: auto;
 }
 .presentation-container .presentation-text-container {
   color: white;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  margin-right: auto;
+}
+.presentation-container .presentation-name {
+  font-size: 2em;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+.presentation-container .spacer {
+  width: 100%;
+  border-bottom: solid 1px white;
+}
+.presentation-container .presentation-job {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=style.css.map */

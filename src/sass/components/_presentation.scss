@@ -5,7 +5,7 @@
     align-items: center;
     width: 50%;
     height: 50%;
-    padding: 50px 100px;
+    padding: 50px;
     background: black;
     z-index: 1;
     top: 50%;
@@ -14,10 +14,34 @@
     border: solid 1px rgb(56, 56, 56);
 
     .logo-container {
-        width: 200px;
+        width: 150px;
+        margin-left: auto;
     }
 
     .presentation-text-container {
         color: white;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        margin-right: auto;
+    }
+
+    .presentation-name {
+        font-size: 2em;
+        letter-spacing: 5px;
+        font-weight: 500;
+    }
+
+    .spacer {
+        width: 100%;
+        border-bottom: solid 1px white;
+    }
+
+    .presentation-job {
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        font-weight: 300;
     }
 }
