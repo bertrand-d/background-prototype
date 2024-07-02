@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+.hovered {
+  transition: fill 0.5s ease;
+  /* Transition progressive de la couleur */
+}
+
+.presentation-container {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  height: 50%;
+  background: black;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px rgb(56, 56, 56);
+}
+
+/*# sourceMappingURL=style.css.map */

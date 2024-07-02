@@ -1,0 +1,20 @@
+{
+  "name": "background-prototype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./src/sass/main.scss:./src/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertrand-d/background-prototype.git"
+  },
+  "author": "Delphine Bertrand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bertrand-d/background-prototype/issues"
+  },
+  "homepage": "https://github.com/bertrand-d/background-prototype#readme"
+}

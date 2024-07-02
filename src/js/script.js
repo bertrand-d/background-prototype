@@ -13,9 +13,9 @@ var bandSpeed = 2;
 var rectSize = 100;
 var gap = 5;
 var rectsPerRow = Math.floor(canvas.width);
-var rectColors = '#0B0B0B'; // Couleurs des rectangles
-var hoveredRect = null; // Rectangle survolé
+var rectColors = '#0B0B0B'; // Couleur de base des rectangles
 var hoveredRectColor = "#9000bb"; //couleur du rectangle survolé
+var hoveredRect = null; // Rectangle survolé
 
 //Variable pour suivre le temps écoulé depuis le début du survol
 var hoverTime = 0;
@@ -77,6 +77,7 @@ function animateBackground() {
 
 // Variable pour suivre l'état précédent du rectangle survolé
 var previousHoveredRect = null;
+
 
 // Fonction pour détecter le survol des rectangles
 canvas.addEventListener('mousemove', function (event) {
