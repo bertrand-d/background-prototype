@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 @keyframes appearDown {
   from {
-    margin-top: -40px;
+    margin-top: -100%;
   }
   to {
     margin-top: 0;
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 @keyframes appearUp {
   from {
-    margin-bottom: -40px;
+    margin-bottom: -100%;
   }
   to {
     margin-bottom: 0;
@@ -77,15 +77,20 @@ h1, h2, h3, h4, h5, h6, p {
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 1px rgb(56, 56, 56);
-  animation: growRightAndTop 1.5s ease-in-out both;
+  animation: growRightAndTop 1.3s ease-in-out 0.5s both;
 }
 .presentation .logo-container {
   width: 150px;
   margin-left: auto;
-  display: none;
+  overflow: hidden;
+}
+.presentation .logo-container img {
+  opacity: 0;
+  animation: appearUp 0.9s ease-in-out 1.7s both;
 }
 .presentation .presentation-container {
   color: white;
+  text-align: center;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -97,13 +102,13 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 2em;
   letter-spacing: 5px;
   font-weight: 500;
-  animation: appearUp 1.2s ease-in-out 2s both;
+  animation: appearUp 2s ease-in-out 1.6s both;
   opacity: 0;
 }
 .presentation .spacer {
   width: 100%;
   border-bottom: solid 1px white;
-  animation: growRight 1s ease-in-out 2s both;
+  animation: growRight 0.8s ease-in-out 2.3s both;
 }
 .presentation .presentation-text-container {
   overflow: hidden;
@@ -112,7 +117,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 1.5em;
   letter-spacing: 2px;
   font-weight: 300;
-  animation: appearDown 1.2s ease-in-out 2s both;
+  animation: appearDown 2s ease-in-out 1.6s both;
   opacity: 0;
 }
 
