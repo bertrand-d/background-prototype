@@ -64,6 +64,18 @@ h1, h2, h3, h4, h5, h6, p {
     height: 50%;
   }
 }
+/* HOW TO USE :
+
+for desktop first
+@include breakpoint(lg) {
+     display: flex;
+} 
+
+for mobile first
+@include breakpoint(lg, up) {
+     display: flex;
+} 
+*/
 .presentation {
   position: absolute;
   display: flex;
