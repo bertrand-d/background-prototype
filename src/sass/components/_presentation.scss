@@ -13,14 +13,23 @@
     border: solid 1px rgb(56, 56, 56);
     animation: growRightAndTop 1.3s ease-in-out 0.5s both;
 
+    @include breakpoint(sm) {
+        width: 90%;
+        height: 80%;
+    }
+
     .logo-container {
         width: 150px;
         margin-left: auto;
         overflow: hidden;
-        
+
         img {
             opacity: 0;
             animation: appearUp 0.9s ease-in-out 1.7s both;
+        }
+
+        @include breakpoint(sm) {
+            display: none;
         }
     }
 
@@ -33,6 +42,10 @@
         justify-content: center;
         gap: 15px;
         margin-right: auto;
+
+        @include breakpoint(sm) {
+            margin: auto;
+        }
     }
 
     .presentation-name {
@@ -47,6 +60,11 @@
         width: 100%;
         border-bottom: solid 1px white;
         animation: growRight 0.8s ease-in-out 2.3s both;
+        margin: auto;
+
+        @include breakpoint(sm) {
+            max-width: 80%;
+        }
     }
 
     .presentation-text-container {

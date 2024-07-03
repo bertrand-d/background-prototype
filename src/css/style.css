@@ -25,6 +25,18 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+/* HOW TO USE :
+
+for desktop first
+@include breakpoint(lg) {
+     display: flex;
+} 
+
+for mobile first
+@include breakpoint(lg, up) {
+     display: flex;
+} 
+*/
 @keyframes appearDown {
   from {
     margin-top: -100%;
@@ -49,6 +61,9 @@ h1, h2, h3, h4, h5, h6, p {
   }
   to {
     width: 100%;
+    @media (max-width: 768px) {
+      width: 80%;
+    }
   }
 }
 @keyframes growRightAndTop {
@@ -59,23 +74,21 @@ h1, h2, h3, h4, h5, h6, p {
   50% {
     width: 50%;
     height: 0;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+  99% {
+    padding: 0;
   }
   100% {
     height: 50%;
+    padding: 20px;
+    @media (max-width: 768px) {
+      height: 80%;
+    }
   }
 }
-/* HOW TO USE :
-
-for desktop first
-@include breakpoint(lg) {
-     display: flex;
-} 
-
-for mobile first
-@include breakpoint(lg, up) {
-     display: flex;
-} 
-*/
 .presentation {
   position: absolute;
   display: flex;
@@ -91,6 +104,12 @@ for mobile first
   border: solid 1px rgb(56, 56, 56);
   animation: growRightAndTop 1.3s ease-in-out 0.5s both;
 }
+@media (max-width: 768px) {
+  .presentation {
+    width: 90%;
+    height: 80%;
+  }
+}
 .presentation .logo-container {
   width: 150px;
   margin-left: auto;
@@ -99,6 +118,11 @@ for mobile first
 .presentation .logo-container img {
   opacity: 0;
   animation: appearUp 0.9s ease-in-out 1.7s both;
+}
+@media (max-width: 768px) {
+  .presentation .logo-container {
+    display: none;
+  }
 }
 .presentation .presentation-container {
   color: white;
@@ -109,6 +133,11 @@ for mobile first
   justify-content: center;
   gap: 15px;
   margin-right: auto;
+}
+@media (max-width: 768px) {
+  .presentation .presentation-container {
+    margin: auto;
+  }
 }
 .presentation .presentation-name {
   font-size: 2em;
@@ -121,6 +150,12 @@ for mobile first
   width: 100%;
   border-bottom: solid 1px white;
   animation: growRight 0.8s ease-in-out 2.3s both;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .presentation .spacer {
+    max-width: 80%;
+  }
 }
 .presentation .presentation-text-container {
   overflow: hidden;
