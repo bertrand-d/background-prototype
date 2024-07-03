@@ -54,6 +54,10 @@
         font-weight: 500;
         animation: appearUp 2s ease-in-out 1.6s both;
         opacity: 0;
+
+        @include breakpoint(sm) {
+           animation: appearUp 2s ease-in-out 1.4s both;
+        }
     }
 
     .spacer {
@@ -63,7 +67,8 @@
         margin: auto;
 
         @include breakpoint(sm) {
-            max-width: 80%;
+            max-width: 90%;
+            animation: growRight 0.8s ease-in-out 1.8s both;
         }
     }
 
@@ -77,5 +82,9 @@
         font-weight: 300;
         animation: appearDown 2s ease-in-out 1.6s both;
         opacity: 0;
+
+        @include breakpoint(sm) {
+            animation: appearDown 2s ease-in-out 1.4s both;
+         }
     }
 }

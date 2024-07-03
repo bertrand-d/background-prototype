@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background: black;
 }
 
 img {
@@ -62,7 +63,7 @@ for mobile first
   to {
     width: 100%;
     @media (max-width: 768px) {
-      width: 80%;
+      width: 90%;
     }
   }
 }
@@ -146,6 +147,11 @@ for mobile first
   animation: appearUp 2s ease-in-out 1.6s both;
   opacity: 0;
 }
+@media (max-width: 768px) {
+  .presentation .presentation-name {
+    animation: appearUp 2s ease-in-out 1.4s both;
+  }
+}
 .presentation .spacer {
   width: 100%;
   border-bottom: solid 1px white;
@@ -154,7 +160,8 @@ for mobile first
 }
 @media (max-width: 768px) {
   .presentation .spacer {
-    max-width: 80%;
+    max-width: 90%;
+    animation: growRight 0.8s ease-in-out 1.8s both;
   }
 }
 .presentation .presentation-text-container {
@@ -166,6 +173,11 @@ for mobile first
   font-weight: 300;
   animation: appearDown 2s ease-in-out 1.6s both;
   opacity: 0;
+}
+@media (max-width: 768px) {
+  .presentation .presentation-job {
+    animation: appearDown 2s ease-in-out 1.4s both;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

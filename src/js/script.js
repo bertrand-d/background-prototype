@@ -78,7 +78,6 @@ function animateBackground() {
 // Variable pour suivre l'état précédent du rectangle survolé
 var previousHoveredRect = null;
 
-
 // Fonction pour détecter le survol des rectangles
 canvas.addEventListener('mousemove', function (event) {
     var mouseX = event.offsetX;
